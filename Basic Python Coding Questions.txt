@@ -1,0 +1,300 @@
+
+#1.find largest element in given array?
+
+arr = [63,54,98,34,89,42,18]
+
+def max():
+
+    max = arr[0]
+    n = len(arr)
+
+    for i in range(n):
+        if arr[i] > max:
+            max = arr[i]
+    print(max)
+
+max()
+
+
+
+#2.find smallest element in given array?
+
+arr = [63,54,98,34,89,42,18]
+
+def min():
+
+    min = arr[0]
+    n = len(arr)
+
+    for i in range(n):
+        if arr[i] < min:
+            min = arr[i]
+    print(min)
+
+min()
+
+
+
+#3. find substrings of string?
+
+def sub():
+    str = input('Enter String:')
+    n = len(str)
+
+    for i in range(n):
+        for j in range(i+1,n+1):
+            print(str[i:j])
+
+sub()
+
+
+
+#4. find count of amazing substrings of string?
+
+#amazing substring starts with vowel
+
+def amz():
+
+    str = input('Enter string:')
+    n = len(str)
+    count = 0
+    v= 'aeiouAEIOU'
+    vowels = set(v)
+
+    for i in range(n):
+        if str[i] in vowels:
+            count = (count + n-i)
+    print(count)
+
+amz()
+
+
+
+#5. write a program to find common letters between two strings?
+
+def twostr():
+
+    str1 = input('Enter string 1:')
+    str2 = input('Enter string 2:')
+
+    s1 = set(str1)
+    s2 = set(str2)
+    s3 = s1 & s2
+    print('common letters:',s3)
+
+twostr()
+
+
+
+#6. write a program to print left rotation of string?
+
+
+def leftrotation():
+    str = input('Enter string :')
+    n = len(str)
+    temp = str + str
+
+    for i in range(n):
+        for j in range(n):
+            print( temp[i+j],end ="")
+        print()
+
+leftrotation()
+
+
+
+#7. write a program to check rotation of two given strings?
+
+def checkrotation():
+
+    str1 = input("Enter first string:")
+    str2 = input("Enter second string:")
+
+    s = str1 + str2
+
+    if (len(str1) == len(str2)):
+        if str2 in s:
+            print(str2,'is roated string of ',str1)
+        else:
+            print(str2,'is not roated string of ',str1)
+    else:
+        print('length of strings not matching')
+
+checkrotation()
+
+
+
+#8. write a program to find frquency of words in string?
+
+def frequency(str):
+
+    li = str.split()
+    d = {}
+
+    for i in li:
+        if i not in d.keys():
+            d[i]=0
+        d[i] = d[i]+1
+    print(d)
+
+str = 'sandeep loves eating mangoes and sandeep loves eating banana'
+
+frequency(str)
+
+
+
+#9. write a program to find first non repeating character in string?
+
+
+def non_rep():
+
+    str = 'sanddeepsndeep'
+    n = len(str)
+    d={}
+
+    for i in str:
+        if i not in d.keys():
+            d[i] = 0
+        d[i] = d[i] +1
+    print(d)
+
+    count = 0
+    for i in range(n):
+        if (d[str[i]] == 1):
+            print(str[i],count)
+        count = count +1
+
+non_rep()
+
+
+
+#10. write a program to find missing number in array?
+
+a =[1,2,3,4,6,7,8,9]
+
+def missing():
+
+    sum1 = sum(a)
+    n = a[-1]
+    sum_natural = (n*(n+1)//2)
+    missing_number = sum_natural -sum1
+    print(missing_number)
+
+missing()
+
+
+
+#11. write a program to find given number is prime or not?
+
+num = int(input('Enter value:'))
+
+def prime():
+    flag = 0
+    if (num>1):
+        for i in range(2,num):
+            if (num % i) == 0:
+                flag =1
+                break
+        if flag == 0:
+            print(' given number is prime number')
+        else:
+            print('given number is not prime number')
+prime()
+
+
+
+#12. write a program to print reverse string of given string?
+
+def reverse(str):
+
+    str = 'sandeep'
+    re_str = ''
+
+    for i in str:
+        re_str = i+re_str 
+    print(re_str)
+
+reverse(str)
+
+
+def reverse(str):
+
+    str = 'sandeep'
+
+    re_str = str[::-1]
+    print(re_str)
+
+reverse(str)
+
+
+#13. write a program to print reverse words in given string?
+
+
+def reverse():
+
+    str = 'Python is object orinted programming language'
+
+    words = str.split(' ')
+
+    words = list(reversed(words))
+
+    re_str = (' '.join(words))
+    print(re_str)
+
+reverse()
+
+
+
+#14. write a program to print common elements two lists?
+
+def common():
+    l1 = [40,50,60,80,100]
+    l2 = [50,100,150,200]
+    l3 = list()
+    count = 0
+    for i in l1:
+        for j in l2:
+            if (i == j) :
+                l3.append(i)
+                count = count +1
+    print(l3)
+    print('No.of common elements in list',count)
+
+common()
+
+
+
+def common():
+    l1 = [40,50,60,80,100]
+    l2 = [50,100,150,200]
+
+    s1 = set(l1)
+    s2 = set(l2)
+
+    s3 = s1&s2
+
+    print(s3)
+common()
+
+
+#15. write a program to convert two lists in dictonary?
+
+def list_dict():
+    l1 = [1,2,3,4,5,6,7]
+    l2 = ['one','two','three','four','five','six','seven']
+    d = dict(zip(l1,l2))
+    print(d)
+    
+list_dict()
+
+
+
+#16. write a program to convert dictonary in to tuple pair?
+
+def dict_tup():
+
+    x = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven'}
+
+    for i in x.items():
+        print(i)
+dict_tup()
