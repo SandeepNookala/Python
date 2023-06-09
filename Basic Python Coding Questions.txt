@@ -88,7 +88,6 @@ twostr()
 
 #6. write a program to print left rotation of string?
 
-
 def leftrotation():
     str = input('Enter string :')
     n = len(str)
@@ -227,6 +226,7 @@ def reverse(str):
 reverse(str)
 
 
+
 #13. write a program to print reverse words in given string?
 
 
@@ -277,6 +277,7 @@ def common():
 common()
 
 
+
 #15. write a program to convert two lists in dictonary?
 
 def list_dict():
@@ -298,3 +299,188 @@ def dict_tup():
     for i in x.items():
         print(i)
 dict_tup()
+
+
+
+#17. write a program to reverse list in python?
+
+
+#reverse
+
+l1 = [1,2,3,4,5,6,7,8,9,10]
+
+l1.reverse()
+
+print(l1)
+
+
+#slicing
+
+l2 = l1[::-1]
+
+print(l2)
+
+
+#reversed
+
+l2 = list(reversed(l1))
+
+print(l2)
+
+
+#for
+
+l2 = list()
+
+n = len(l1)
+
+for i in range(n-1,-1,-1):
+    l2.append(l1[i])
+
+print(l2)
+
+
+
+#18. write a program to remove duplicates in python list?
+
+#using set function
+
+arr2 = list(set(arr))
+
+print(arr2)
+
+
+#using duplicates using empty list
+
+arr3 = []
+
+for i in arr:
+    if i not in arr3:
+        arr3.append(i)
+print(arr3)
+
+
+#using lambda function
+
+dup = lambda x : list(set(x))
+
+print(dup(arr))
+
+
+
+#19. write a program to remove duplicates in python sets?
+
+
+#symetric difference
+
+s1 = {1,2,3,4,5}
+s2 = {2,3,4,5,6}
+
+s3 = s1.symmetric_difference(s2)
+
+print(s3)
+
+
+
+#20. write a program to remove duplicates in python dictionary?
+
+dict1 = {
+    'car':["Ford","Toyota","Ford","Toyota"],
+    'brand':["Must","Ranz","Must","Ranz"]
+}
+
+dict2 = {}
+
+for key,value in dict1.items():
+        dict2[key] = set(value)
+
+print(dict2)
+
+
+
+#21.find out pairs with given sum in a array?
+
+arr =[5,7,4,3,9,8,19,21]
+sum = 26
+
+
+def pairsum():
+
+    left = 0
+    n = len(arr)
+    right = n-1
+
+    while(left <= right):
+        if ( arr[left]+ arr[right] > sum):
+            right = right -1
+        elif ( arr[left]+arr[right] < sum):
+            left = left +1
+        elif (arr[left]+arr[right] == sum):
+            print('pair value of sum are:',arr[left],arr[right])
+            right = right -1
+            left = left +1
+pairsum()
+
+
+
+#22.Find minimum difference between  two elements of array?
+
+arr =[22,59,7,4,3,99,8,19,21]
+arr.sort()
+
+def min_diff():
+    n = len(arr)
+    min_diff = 9999999
+    for i in range(n-1):
+        if (arr[i+1]-arr[i] < min_diff):
+            min_diff = arr[i+1]-arr[i]
+            print(min_diff)
+
+min_diff()
+
+
+#23.Maximum Difference between two elements of array?
+
+arr =[5,32,45,4,12,18,25]
+arr.sort()
+
+def max_diff():
+
+
+    diff = - 999999999
+    n = len(arr)
+
+    for i in range(n-1):
+        if ( arr[i+1] - arr[i] > diff):
+            diff = arr[i+1] - arr[i]
+    print(diff)
+max_diff()
+
+
+
+
+
+#24.find length of last word in string?
+
+x = 'hello sandeep '
+
+def last():
+
+    arr = x.split()
+
+    last_word = arr[-1]
+
+    print(len(last_word))
+
+last()
+
+
+#25.Extract all numbers in string and return the number as a list?
+
+import re
+
+sentence = 'sandeep 26 years old.he wants 91.99 in maths'
+
+digit = re.findall('\d*\.?\d+',sentence)
+
+print(digit)
