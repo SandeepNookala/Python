@@ -1,486 +1,341 @@
 
-#1.find largest element in given array?
+#print Hello world?
+#==================
 
-arr = [63,54,98,34,89,42,18]
-
-def max():
-
-    max = arr[0]
-    n = len(arr)
-
-    for i in range(n):
-        if arr[i] > max:
-            max = arr[i]
-    print(max)
-
-max()
+print('Hello world')
 
 
 
-#2.find smallest element in given array?
+Types of operators:
+===================
 
-arr = [63,54,98,34,89,42,18]
+#What is the outputs of the Python arthametic operators?
+#========================================================
 
-def min():
+a = 10
+b = 10
 
-    min = arr[0]
-    n = len(arr)
-
-    for i in range(n):
-        if arr[i] < min:
-            min = arr[i]
-    print(min)
-
-min()
-
-
-
-#3. find substrings of string?
-
-def sub():
-    str = input('Enter String:')
-    n = len(str)
-
-    for i in range(n):
-        for j in range(i+1,n+1):
-            print(str[i:j])
-
-sub()
+print('addition:',a+b)
+print('subtraction:',a-b)
+print('multiplication:',a*b)
+print('division:',a/b)
+print('floor division:',a//b)
+print('module:',a*b)
+print('exponent',a**b)
 
 
 
-#4. find count of amazing substrings of string?
+#What is the outputs of the Python identity operators?
+#=====================================================
 
-#amazing substring starts with vowel
+a = 'sandeep'
+b = 'sandeep is big data Engineer'
 
-def amz():
-
-    str = input('Enter string:')
-    n = len(str)
-    count = 0
-    v= 'aeiouAEIOU'
-    vowels = set(v)
-
-    for i in range(n):
-        if str[i] in vowels:
-            count = (count + n-i)
-    print(count)
-
-amz()
+print( a is b)
+print(a is not b)
 
 
 
-#5. write a program to find common letters between two strings?
+#What is the outputs of the Python membership operators?
+========================================================
 
-def twostr():
+a = 'sandeep'
+b = 'sandeep is big data Engineer'
 
-    str1 = input('Enter string 1:')
-    str2 = input('Enter string 2:')
-
-    s1 = set(str1)
-    s2 = set(str2)
-    s3 = s1 & s2
-    print('common letters:',s3)
-
-twostr()
+print(a in b)
+print(a not in b)
 
 
 
-#6. write a program to print left rotation of string?
+#What is the outputs of the Python relational operators/comparison operators?
+#============================================================================
 
-def leftrotation():
-    str = input('Enter string :')
-    n = len(str)
-    temp = str + str
+a = 'sandeep'
+b = 'sandeep is big data Engineer'
 
-    for i in range(n):
-        for j in range(n):
-            print( temp[i+j],end ="")
-        print()
-
-leftrotation()
+print('a is greaterthen b:',a>b)
+print('a is lessthen b:',a<b)
+print('a is equal to b:',a==b)
 
 
 
-#7. write a program to check rotation of two given strings?
+loops:
+======
 
-def checkrotation():
+#print even and odd numbers in any given range using for loop?
+#=============================================================
 
-    str1 = input("Enter first string:")
-    str2 = input("Enter second string:")
+n = int(input('Enter any Number:'))
 
-    s = str1 + str2
-
-    if (len(str1) == len(str2)):
-        if str2 in s:
-            print(str2,'is roated string of ',str1)
-        else:
-            print(str2,'is not roated string of ',str1)
+for i in range(1,n+1):
+    if i%2 == 0:
+        print('Even Number',i)
     else:
-        print('length of strings not matching')
+        print('odd Number',i)
+		
+			
+#print even and odd numbers in any given range using while loop?
+#===============================================================
 
-checkrotation()
+n = int(input('Enter any number:'))
+i=1
+while i <= n :
+    if i%2 == 0:
+        print('even number:',i)
+    else:
+        print('odd number:',i)
+    i = i+1
+	
+	
+#print only even numbers in any given range using continue?
+#==========================================================
 
+n = int(input('Enter any number:'))
 
+for i in range(1,n+1):
+    if i % 2 != 0:
+        continue
+    print('Even numbers',i)
 
-#8. write a program to find frquency of words in string?
+	
+	
+strings:
+========
 
-def frequency(str):
+#types of strings?
+#=================
 
-    li = str.split()
-    d = {}
+a = 'sandeep'           #singleline string
 
-    for i in li:
-        if i not in d.keys():
-            d[i]=0
-        d[i] = d[i]+1
-    print(d)
+b = '''sandeep is 
+BigData
+Engineer'''             # Multiline String
 
-str = 'sandeep loves eating mangoes and sandeep loves eating banana'
+print(a)
+print(b)
 
-frequency(str)
 
 
+#print words using slice operator?
+#=================================
 
-#9. write a program to find first non repeating character in string?
+b = 'sandeep is BigData Engineer'
 
+print(b[0])         # first character in string
+print(b[-1])        # last character in string
+print(b[6])         # fifth character in string
+print(b[1:6])       # second to fifth character in string
+print(b[0::2])      # even character positions in string
+print(b[1::2])      # odd character  positions in string
 
-def non_rep():
 
-    str = 'sanddeepsndeep'
-    n = len(str)
-    d={}
+# reverse characters in entire string
+=====================================
 
-    for i in str:
-        if i not in d.keys():
-            d[i] = 0
-        d[i] = d[i] +1
-    print(d)
+b = 'sandeep is BigData Engineer'
 
-    count = 0
-    for i in range(n):
-        if (d[str[i]] == 1):
-            print(str[i],count)
-        count = count +1
+print(b[::-1])
 
-non_rep()
 
 
+# reverse only words given string
+=================================
 
-#10. write a program to find missing number in array?
+b = 'sandeep is BigData Engineer'
 
-a =[1,2,3,4,6,7,8,9]
+x = b.split(' ')
 
-def missing():
+y = ' '.join(reversed(x))
 
-    sum1 = sum(a)
-    n = a[-1]
-    sum_natural = (n*(n+1)//2)
-    missing_number = sum_natural -sum1
-    print(missing_number)
+print(b)
+print(y)
 
-missing()
 
 
+# reverse only characters in each and every word in string
+==========================================================
 
-#11. write a program to find given number is prime or not?
+b = 'sandeep is BigData Engineer'
 
-num = int(input('Enter value:'))
+x = b.split(' ')
 
-def prime():
-    flag = 0
-    if (num>1):
-        for i in range(2,num):
-            if (num % i) == 0:
-                flag =1
-                break
-        if flag == 0:
-            print(' given number is prime number')
-        else:
-            print('given number is not prime number')
-prime()
+y = ' '.join(reversed(x))
 
+z = y[::-1]
 
+print(b)
+print(z)
 
-#12. write a program to print reverse string of given string?
 
-def reverse(str):
 
-    str = 'sandeep'
-    re_str = ''
+#perform concatenation,repetition and find length of strings?
+#=============================================================
 
-    for i in str:
-        re_str = i+re_str 
-    print(re_str)
+a = 'sandeep '
+b = 'sandeep is BigData Engineer'
 
-reverse(str)
+print('concatenation :',a+b)
+print('repetation:',a*3)
+print('length of b is :',len(b))
 
 
-def reverse(str):
 
-    str = 'sandeep'
+#remove spaces in string?
+#========================
 
-    re_str = str[::-1]
-    print(re_str)
+a = '   sandeep is BigData Engineer    '
+b = '     sandeep is BigData Engineer'
+c = 'sandeep is BigData Engineer      '
 
-reverse(str)
+print(b)
+print(b.strip())    # it will remove both sides space
+print(b.lstrip())   # it will remove left side space
+print(c.rstrip())   # it will remove right side space
 
 
 
-#13. write a program to print reverse words in given string?
+#find sub string in main string?
+#================================
+a = 'i'
+b = 'sandeep is BigData Engineer'
 
+print(b.find(a))
 
-def reverse():
 
-    str = 'Python is object orinted programming language'
 
-    words = str.split(' ')
+#replace old string with new string?
+#===================================
 
-    words = list(reversed(words))
+b = 'sandeep is BigData Engineer'
 
-    re_str = (' '.join(words))
-    print(re_str)
+print( b.replace('sandeep','satish'))
 
-reverse()
 
 
 
-#14. write a program to print common elements two lists?
+#find all positions of substring in main string and find count of sub string ?
+#=============================================================================
 
-def common():
-    l1 = [40,50,60,80,100]
-    l2 = [50,100,150,200]
-    l3 = list()
-    count = 0
-    for i in l1:
-        for j in l2:
-            if (i == j) :
-                l3.append(i)
-                count = count +1
-    print(l3)
-    print('No.of common elements in list',count)
+b = 'sandeep is BigData Engineer'
+a= 'e'
+n = len(b)
+result = [i for i in range(n) if b.startswith(a,i)]
 
-common()
+print(result)
+print(b.count(a))
 
 
 
-def common():
-    l1 = [40,50,60,80,100]
-    l2 = [50,100,150,200]
+#convert string into list?
+#=========================
+b = 'sandeep'
 
-    s1 = set(l1)
-    s2 = set(l2)
+list1 = list(b)
+print(list1)
 
-    s3 = s1&s2
 
-    print(s3)
-common()
 
+#split string using - seperator?
+#================================
 
+d='18-04-2022'
 
-#15. write a program to convert two lists in dictonary?
+list = list(d.split('-'))
 
-def list_dict():
-    l1 = [1,2,3,4,5,6,7]
-    l2 = ['one','two','three','four','five','six','seven']
-    d = dict(zip(l1,l2))
-    print(d)
-    
-list_dict()
+print(list)
 
 
 
-#16. write a program to convert dictonary in to tuple pair?
+#convert list to string using join?
+#==================================
 
-def dict_tup():
+x = ['sandeep', 'is', 'bigata','Engineer']
 
-    x = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven'}
+a = '_'.join(x)
 
-    for i in x.items():
-        print(i)
-dict_tup()
+b = ' '.join(x)
 
+print(a)
+print(b)
+print(type(b))
+print(type(a))
 
 
-#17. write a program to reverse list in python?
 
+#change the case of strings using title,capitalise,upper,lower,swapcase?
+#=======================================================================
 
-#reverse
+b = 'sandeep is BigData Engineer'
 
-l1 = [1,2,3,4,5,6,7,8,9,10]
+print(b.upper())
+print(b.lower())
+print(b.swapcase())
+print(b.title())
+print(b.capitalize())
 
-l1.reverse()
 
-print(l1)
 
+#check the type of character present in the string?
+#==================================================
 
-#slicing
+z='isestablishedon18042021'
 
-l2 = l1[::-1]
+print(z.isalpha())
+print(z.isdigit())
+print(z.isalnum())
+print(z.isspace())
 
-print(l2)
 
 
-#reversed
+#check the starting and ending of the string?
+#=============================================
 
-l2 = list(reversed(l1))
+b = 'sandeep is BigData Engineer'
 
-print(l2)
+print(b.startswith('s'))
+print(b.endswith('r'))
 
 
-#for
 
-l2 = list()
+#string formatting?
+#==================
 
-n = len(l1)
+e='establised'
+d=18
+m=4
+ye=2021
 
-for i in range(n-1,-1,-1):
-    l2.append(l1[i])
 
-print(l2)
+a = 'nookala acadamy {} is on {}/{}/{}'.format(e,d,m,ye)
+print(a)
 
 
 
-#18. write a program to remove duplicates in python list?
+# Access positive and Negitive index for each element in that string using for loop?
+#===================================================================================
 
-#using set function
+b = 'sandeep is BigData Engineer'
+n = len(b)
 
-arr2 = list(set(arr))
+for i in range(n):
+    print('for',b[i],'+ ve Index is:',i)
+    print('for',b[i],'- ve Index is:',i-n)
+	
+	
+	
+# Access positive and Negitive index for each element in that string using while loop?
+#=====================================================================================
 
-print(arr2)
+b = 'sandeep is BigData Engineer'
+i = 0
+n = len(b)
 
+while i<n:
+    print('for',b[i],'+ve index is',i)
+    print('for',b[i],'-ve index is',i-n)
+    i = i+1
+	
 
-#using duplicates using empty list
+List:
+=====
 
-arr3 = []
-
-for i in arr:
-    if i not in arr3:
-        arr3.append(i)
-print(arr3)
-
-
-#using lambda function
-
-dup = lambda x : list(set(x))
-
-print(dup(arr))
-
-
-
-#19. write a program to remove duplicates in python sets?
-
-
-#symetric difference
-
-s1 = {1,2,3,4,5}
-s2 = {2,3,4,5,6}
-
-s3 = s1.symmetric_difference(s2)
-
-print(s3)
-
-
-
-#20. write a program to remove duplicates in python dictionary?
-
-dict1 = {
-    'car':["Ford","Toyota","Ford","Toyota"],
-    'brand':["Must","Ranz","Must","Ranz"]
-}
-
-dict2 = {}
-
-for key,value in dict1.items():
-        dict2[key] = set(value)
-
-print(dict2)
-
-
-
-#21.find out pairs with given sum in a array?
-
-arr =[5,7,4,3,9,8,19,21]
-sum = 26
-
-
-def pairsum():
-
-    left = 0
-    n = len(arr)
-    right = n-1
-
-    while(left <= right):
-        if ( arr[left]+ arr[right] > sum):
-            right = right -1
-        elif ( arr[left]+arr[right] < sum):
-            left = left +1
-        elif (arr[left]+arr[right] == sum):
-            print('pair value of sum are:',arr[left],arr[right])
-            right = right -1
-            left = left +1
-pairsum()
-
-
-
-#22.Find minimum difference between  two elements of array?
-
-arr =[22,59,7,4,3,99,8,19,21]
-arr.sort()
-
-def min_diff():
-    n = len(arr)
-    min_diff = 9999999
-    for i in range(n-1):
-        if (arr[i+1]-arr[i] < min_diff):
-            min_diff = arr[i+1]-arr[i]
-            print(min_diff)
-
-min_diff()
-
-
-#23.Maximum Difference between two elements of array?
-
-arr =[5,32,45,4,12,18,25]
-arr.sort()
-
-def max_diff():
-
-
-    diff = - 999999999
-    n = len(arr)
-
-    for i in range(n-1):
-        if ( arr[i+1] - arr[i] > diff):
-            diff = arr[i+1] - arr[i]
-    print(diff)
-max_diff()
-
-
-
-
-
-#24.find length of last word in string?
-
-x = 'hello sandeep '
-
-def last():
-
-    arr = x.split()
-
-    last_word = arr[-1]
-
-    print(len(last_word))
-
-last()
-
-
-#25.Extract all numbers in string and return the number as a list?
-
-import re
-
-sentence = 'sandeep 26 years old.he wants 91.99 in maths'
-
-digit = re.findall('\d*\.?\d+',sentence)
-
-print(digit)
