@@ -1,0 +1,67 @@
+dictionary:
+===========
+
+#creation of dic:
+#===============
+
+d = {}                                                      #empty dictionary
+
+print(d,type(d))
+
+
+d1 = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}         # key and value pairs
+
+print(d1,type(d1))
+
+
+
+#access elements in dic:
+#=======================
+
+d1 = {4:'sandeep',3:'satish',1:'krishna',2:'padma',5:'sandeep',6:'satish'}
+
+print(d1.items())           #prints keys and vales
+print(d1.keys())            #prints only keys
+print(d1.values())          #prints only values
+print(d1[3])                #gives value for associated key
+
+
+
+#functions delete,clear:
+#=======================
+
+d = {4:'sandeep',3:'satish',1:'krishna',2:'padma',5:'sandeep',6:'satish'}
+
+del d[6]          #remove particular element
+
+print(d)
+
+d.clear()         #removes all elements
+
+print(d)
+
+
+
+#functions len,get,pop,popitem,copy,update
+#=========================================
+
+d = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}
+
+
+print('length of dic',len(d))
+print('get 2(key) value is:',d[2])
+
+d.pop(2)                 #remove particular key
+print(d)
+
+
+d.popitem()              #removes key-value pair
+print(d)
+
+
+x ={5:'sweety',6:'notty'}
+d.update(x)              #adds new key value pairs from another dic
+print(d)
+
+d1 = d.copy()            #copy dic elements to another dic
+print(d1)
