@@ -1,7 +1,7 @@
 
 #1.find largest element in given array?
 
-arr = [63,54,98,34,89,42,18]
+arr = [63,54,98,34,89,42,18,100]
 
 def max():
 
@@ -19,7 +19,7 @@ max()
 
 #2.find smallest element in given array?
 
-arr = [63,54,98,34,89,42,18]
+arr = [63,54,98,34,89,42,18,100]
 
 def min():
 
@@ -37,15 +37,15 @@ min()
 
 #3. find substrings of string?
 
-def sub():
-    str = input('Enter String:')
+def substring():
+    str = input('Enter string')
     n = len(str)
 
     for i in range(n):
         for j in range(i+1,n+1):
             print(str[i:j])
+substring()
 
-sub()
 
 
 
@@ -59,7 +59,6 @@ def amz():
     n = len(str)
     count = 0
     v= 'aeiouAEIOU'
-    vowels = set(v)
 
     for i in range(n):
         if str[i] in vowels:
@@ -109,7 +108,7 @@ def checkrotation():
     str1 = input("Enter first string:")
     str2 = input("Enter second string:")
 
-    s = str1 + str2
+    s = str1 + str1
 
     if (len(str1) == len(str2)):
         if str2 in s:

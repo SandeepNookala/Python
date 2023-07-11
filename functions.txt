@@ -251,3 +251,52 @@ t1 = (0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100)
 two_tuple = tuple(map(lambda x,y : x*y ,t,t1))
 
 print(two_tuple)
+
+
+#Reduce:
+#=======
+
+# Sum ,multiple all elements in list using reduce function
+#==========================================================
+
+t = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+from functools import *
+
+sum = reduce(lambda x,y : x+y ,t)
+
+mul = reduce(lambda x,y: x*y ,t)
+
+print(sum)
+print(mul)
+
+
+#Nested Function: prints only outer functions
+#===============
+
+
+def out():
+    print('outer function')
+
+    def inn():
+        print('inner function')
+
+    print('second outer')
+
+out()
+
+
+#Nested Function:prints both outer and inner functions
+#===============
+
+
+def out():
+    print('outer function')
+
+    def inn():
+        print('inner function')
+    inn()
+
+    print('second outer')
+
+out()
