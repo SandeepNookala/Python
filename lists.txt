@@ -125,6 +125,8 @@ l2 = [6,7,8,9,10]
 
 l1.reverse()              #reverse all items in list
 
+l4 = reversed(l1)
+
 l1.sort(reverse = False)  #sort -asending order
 
 
