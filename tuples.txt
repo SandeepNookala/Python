@@ -31,6 +31,18 @@ print(type(t3))
 
 
 
+#Join:
+#=====
+#works with only strings
+
+a = ('Nookala','sandeep','patel')
+seperator ='_'
+
+b = seperator.join(a)
+
+print(b)
+
+
 #accessing elements by index ,slice operator:
 #============================================
 

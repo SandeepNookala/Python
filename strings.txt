@@ -35,13 +35,27 @@ print(b[0::2])      # even character positions in string
 print(b[1::2])      # odd character  positions in string
 
 
+
+#Join:
+#=====
+#works with only strings
+
+a = 'Nookala'
+
+
+seperator ='_'
+
+b = seperator.join(a)
+
+print(b)
+
+
 # reverse characters in entire string
 =====================================
 
 b = 'sandeep is BigData Engineer'
 
 print(b[::-1])
-
 
 
 # reverse only words given string

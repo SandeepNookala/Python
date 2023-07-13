@@ -469,3 +469,6 @@ def last():
     print(len(last_word))
 
 last()
+
+
+#24.print current date and time?

@@ -8,10 +8,23 @@ d = {}                                                      #empty dictionary
 
 print(d,type(d))
 
-
 d1 = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}         # key and value pairs
 
 print(d1,type(d1))
+
+
+
+#Join:
+#=====
+#works with only strings
+
+d = {'4':'sandeep','3':'satish','1':'krishna','2':'padma'}
+seperator ='_'
+
+b = seperator.join(d)
+c = seperator.join(d.values())
+print(b)
+print(c)
 
 
 
@@ -46,6 +59,7 @@ print(d)
 #=========================================
 
 d = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}
+x ={5:'sweety',6:'notty'}
 
 
 print('length of dic',len(d))
@@ -59,9 +73,29 @@ d.popitem()              #removes key-value pair
 print(d)
 
 
-x ={5:'sweety',6:'notty'}
+
 d.update(x)              #adds new key value pairs from another dic
 print(d)
 
 d1 = d.copy()            #copy dic elements to another dic
 print(d1)
+
+
+
+#how to merge two dictionaries
+#=============================
+
+d = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}
+x ={5:'sweety',6:'notty'}
+
+d.update(x)
+
+print(d)
+
+
+d1 = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}
+d2 ={5:'sweety',6:'notty'}
+
+d3 = {**d1,**d2}
+
+print (d3)

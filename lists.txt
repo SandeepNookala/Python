@@ -26,6 +26,19 @@ print(type(l1))
 
 
 
+#Join:
+#=====
+#works with only strings
+
+a = ['Nookala','sandeep','patel']
+seperator ='_'
+
+b = seperator.join(a)
+
+print(b)
+
+
+
 #accessing elements of list using index and silce operator:
 #==========================================================
 
