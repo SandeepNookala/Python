@@ -1,5 +1,5 @@
-1.Add 18% Gst amount to orders amount list and print final transformed list?
-
+#1.Add 18% Gst amount to orders amount list and print final transformed list?
+*******************************************************************************
 #method1:
 order_amount = [100,200,50,500,400,900,1200,70]
 order_amount_with_gst =[]
@@ -18,8 +18,8 @@ order_amount_with_gst = [i+(i*0.18) for i in order_amount]
 print(order_amount_with_gst)
 
 
-2.orders amount and gst is given in tuple ,find final transformed list?
-
+#2.orders amount and gst is given in tuple ,find final transformed list?
+***********************************************************************
 #method1:
 order_amount = [(100,5),(200,18),(50,12),(500,18),(400,12),(900,5),(1200,18),(70,12)]
 order_amount_with_gst =[]
@@ -36,14 +36,15 @@ order_amount_with_gst = [x[0]+((x[0]*x[1])/100) for x in order_amount]
 print(order_amount_with_gst)
 
 
-3. orders amount and gst is given in tuple ,print order amount,gst,total amount in tuple inside final list using list comprehension?
-
+#3. orders amount and gst is given in tuple ,print order amount,gst,total amount in tuple inside final list using list comprehension?
+**********************************************************************************************************************
 order_amount = [(100,5),(200,18),(50,12),(500,18),(400,12),(900,5),(1200,18),(70,12)]
 order_tuple = [(x[0],x[1],x[0]+(x[0]*x[1]/100)) for x in order_amount]
 print(order_tuple)
 
 
-4.create this nested list.nested_list = [[1,1,1],[2,4,8],[3,9,27]]
+#4.create this nested list.nested_list = [[1,1,1],[2,4,8],[3,9,27]]
+*******************************************************************
 
 #method1:
 new_list=[]
@@ -57,8 +58,8 @@ new_list = [[i,i**2,i**3] for i in range(1,4)]
 print(new_list)
 
 
-5.flater this nested_list = [[1,1,1],[2,4,8],[3,9,27]]
-
+#5.flater this nested_list = [[1,1,1],[2,4,8],[3,9,27]]
+*******************************************************
 #method1:
 
 nested_list = [[1,1,1],[2,4,8],[3,9,27]]
@@ -106,23 +107,24 @@ print(closed_order)
 
 
 
-7.unpack given order_list =[101,"2013-07-25 00:00:00.0",11599,"CLOSED"]
-
+#7.unpack given order_list =[101,"2013-07-25 00:00:00.0",11599,"CLOSED"]
+*************************************************************************
 order_list =[101,"2013-07-25 00:00:00.0",11599,"CLOSED"]
 order_id,order_date,customer_id,order_status = order_list
 print(order_status)
 print(customer_id)
 
 
-8.print new list without unwanted data?
-
+#8.print new list without unwanted data?
+****************************************
 customers = [1,"Sandeep,Nookala","XXXXXXX","XXXXXX","6303 heather Plaza","Brownsville","TX",78521]
 
 print(customers[0:2],customers[4:])
 
 
 
-9. combain two lists
+#9. combain two lists?
+#######################
 customers = [1,"Sandeep,Nookala","XXXXXXX","XXXXXX","6303 heather Plaza","Brownsville","TX",78521]
 orders_list =[101,"2013-07-25 00:00:00.0",11599,"CLOSED"]
 
@@ -130,15 +132,15 @@ customers.extend(order_list)
 print(customers)
 
 
-10.print index and element with enumerate?
-
+#10.print index and element with enumerate?
+*******************************************
 orders_list =[101,"2013-07-25 00:00:00.0",11599,"CLOSED"]
 for x,y in enumerate(orders_list):
   print(f"index is:{x} element is:{y}")
 
 
-11.count the number of occurences of each word
-
+#11.count the number of occurences of each word?
+************************************************
 user_list = input("Enter word with ',' separeted")
 input_list = user_list.split(',')
 input_list_lower = [i.lower() for i in input_list]
@@ -150,7 +152,8 @@ for i in unique_set:
 print(word_count)
 
 
-12.count no.of each order status
+#12.count no.of each order status?
+*********************************
 data = """order_id,order_date,customer_id,order_status
 1,2013-07-25 00:00:00.0,11599,CLOSED
 2,2013-07-25 00:00:00.0,256,PENDING_PAYMENT
