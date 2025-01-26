@@ -1,4 +1,3 @@
-
 #pattern programme - rectangle shape:
 #===================================
 
