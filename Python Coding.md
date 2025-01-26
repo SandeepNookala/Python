@@ -614,20 +614,6 @@ print("URL is valid")
 else:
 print("URL is invalid")
 
-#prints total_revenue,avg_order_price?
-#*************************************
-bigdata_fee =800
-azure_fee   =600
-bigdata_enrollments =20
-azure_enrollments =40
-
-total_revenue = (bigdata_fee*bigdata_enrollments)+(azure_fee*azure_enrollments)
-avg_order_price = total_revenue/(bigdata_enrollments+azure_enrollments)
-print(total_revenue)
-print(avg_order_price)
-
-
-
 
 #1.find largest element in given array?
 
@@ -1995,7 +1981,3 @@ for key,value in customers_data.items():
                      customers_header[6]:value[5]}
 print(final_customer)
 print(final_customer.get("11599").get("pincode"))
-
-
-
-
