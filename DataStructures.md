@@ -400,13 +400,9 @@ print(l3)
 
 #Tuple:
 *******
-1.collection of different datatypes inside round brackets () .
+1.collection of different datatypes inside () .
 2.ordered collection
-3.immutable
-4.Tuple takes much lesser space than a List in Python.
-5.Tuple is faster than a List in Python. So it gives us good performance.
-6.Since Tuple is immutable, we can use it in cases like Dictionary creation.
-
+3.immutable 
 
 
 #functions: 
