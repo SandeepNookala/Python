@@ -95,6 +95,87 @@ print(s5)
 s6 = s.symmetric_difference(s1)
 print(s6)
 
+
+#print set with even numbers in range n:
+***************************************
+
+n = int(input('Enter any number:'))
+
+s = set(i for i in range(n) if i %2 == 0)
+
+print(s)
+
+
+#print vowels present in given word using set:
+**********************************************
+
+word = ' sandeep is big data engineer'
+w = set(word)
+
+vowels = 'aeiouAEIOU'
+v = set(vowels)
+
+s = w.intersection(v)
+print(w)
+print(v)
+print(s)
+
+
+#get unique elements from list:
+********************************
+
+dup_list = [1,2,3,4,5,5,4,3,2,1]
+unique_list = list(set(dup_list))
+print(unique_list)
+
+
+#Find invalid order status:
+***************************
+
+order_status = {"COMPLETE","PENDING","CLOSED","PROCESSING","CANCELED","PAYMENT_REVIEW","PENDING_PAYMENT","ON_HOLD","SUSPENDED"}
+valid_order_status = {"COMPLETE","PENDING","CLOSED","PROCESSING","CANCELED","PAYMENT_REVIEW","PENDING_PAYMENT"}
+invalid_order_status = order_status - valid_order_status
+print(invalid_order_status)
+
+
+
+
+#19. write a program to remove common elements from two python sets?
+
+
+#symetric difference
+
+s1 = {1,2,3,4,5}
+s2 = {2,3,4,5,6}
+
+s3 = s1.symmetric_difference(s2)
+
+print(s3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **************************************************
 #Dictionary: {}
 ***********
@@ -251,4 +332,112 @@ print(d)
 
 d1 = d.copy()            #copy dic elements to another dic
 print(d1)
+
+
+
+#15. write a program to convert two lists in dictonary?
+
+def list_dict():
+    l1 = [1,2,3,4,5,6,7]
+    l2 = ['one','two','three','four','five','six','seven']
+    d = dict(zip(l1,l2))
+    print(d)
+
+list_dict()
+
+
+
+#16. write a program to convert dictonary in to tuple pair?
+
+def dict_tup():
+
+    for i in x.items():
+        print(i)
+
+
+x = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven'}
+
+dict_tup()
+
+
+
+#20. write a program to remove duplicates in python dictionary?
+
+dict1 = {
+    'car':["Ford","Toyota","Ford","Toyota"],
+    'brand':["Must","Ranz","Must","Ranz"]
+}
+
+dict2 = {}
+
+for key,value in dict1.items():
+    dict2[key] = set(value)
+
+print(dict2)
+
+
+
+#how to merge two dictionaries:
+*******************************
+
+d = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}
+x ={5:'sweety',6:'notty'}
+
+d.update(x)
+
+print(d)
+
+
+d1 = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}
+d2 ={5:'sweety',6:'notty'}
+
+d3 = {**d1,**d2}
+
+print (d3)
+
+
+#create a dictionary from customers data?
+*******************************************
+
+customers_raw_data = """customer_id,customer_fname,customer_lname,address,city,state,pincode
+11599,Sandeep,Nookala,6303 heather Plaza,Brownsville,TX,78521
+356,David,Rodr,7605 Tawny horse Falls,chicago,IL,60625
+11599,Satish,Nookala,4674 pakala Road,Narsampet,TG,506132"""
+
+#method1:
+customers_header = customers_raw_data.split("\n")[0].split(',')
+customers_data = customers_raw_data.split("\n")[1:]
+
+customers_dic = {}
+for i in customers_data:
+    customers_dic[i.split(',')[0]] = tuple(i.split(',')[1:])
+print(customers_dic)
+
+#method2:
+customers_com= {i.split(',')[0] :tuple(i.split(',')[1:]) for i in customers_data}
+print(customers_com)
+
+print(customers_header)
+
+
+#create nested dictionary from given dictionary? print pincode of customer any customer?
+*****************************************************************************************
+
+customers_header = ['customer_id', 'customer_fname', 'customer_lname', 'address', 'city', 'state', 'pincode']
+customers_data = {'11599': ('Satish', 'Nookala', '4674 pakala Road', 'Narsampet', 'TG', '506132'), '356': ('David', 'Rodr', '7605 Tawny horse Falls', 'chicago', 'IL', '60625')}
+
+final_customer ={}
+
+for key,value in customers_data.items():
+  final_customer[key] = {customers_header[1]:value[0],
+                     customers_header[2]:value[1],
+                     customers_header[3]:value[2],
+                     customers_header[4]:value[3],
+                     customers_header[5]:value[4],
+                     customers_header[6]:value[5]}
+print(final_customer)
+print(final_customer.get("11599").get("pincode"))
+
+
+
 
