@@ -96,6 +96,20 @@ s6 = s.symmetric_difference(s1)
 print(s6)
 
 
+#write a program to print common elements in two lists using sets?
+
+l1 = [40,50,60,80,100]
+l2 = [50,100,150,200]
+
+l1_set = set(l1)
+l2_set = set(l2)
+
+l3 = l1_set & l2_set
+
+print('common elements',l3,'count',len(l3))
+
+
+
 #print set with even numbers in range n:
 ***************************************
 
@@ -105,6 +119,18 @@ s = set(i for i in range(n) if i %2 == 0)
 
 print(s)
 
+
+#write a program to remove common elements from two python sets?
+
+
+#symetric difference
+
+s1 = {1,2,3,4,5}
+s2 = {2,3,4,5,6}
+
+s3 = s1.symmetric_difference(s2)
+
+print(s3)
 
 #print vowels present in given word using set:
 **********************************************
@@ -151,28 +177,6 @@ s2 = {2,3,4,5,6}
 s3 = s1.symmetric_difference(s2)
 
 print(s3)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -334,7 +338,6 @@ d1 = d.copy()            #copy dic elements to another dic
 print(d1)
 
 
-
 #15. write a program to convert two lists in dictonary?
 
 def list_dict():
@@ -374,6 +377,7 @@ for key,value in dict1.items():
     dict2[key] = set(value)
 
 print(dict2)
+
 
 
 
