@@ -617,3 +617,31 @@ count_vowels()
 
 
 
+#32.convert list into string with '_' seperator?
+************************************************
+name_list = ['Nookala','sandeep','patel']
+
+full_name = '_'.join(name_list)
+print(full_name)
+
+
+#33.How to switch the first and last characters in a string Python using list?
+******************************************************************************
+word = 'sandeep'
+word_list = list(word)
+word_list[0],word_list[-1] = word_list[-1],word_list[0]
+swap_word = ''.join(word_list)
+print(swap_word)
+
+
+#34.How to switch the first and last characters in a string Python using slice operator?
+****************************************************************************************
+word = 'sandeep'
+
+word_list = list(word)
+first = word_list[:1]
+last = word_list[-1:]
+middle = word_list[1:-1]
+swap_list = last+middle+first
+swap_word = ''.join(swap_list)
+print(swap_word)
