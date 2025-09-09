@@ -183,3 +183,49 @@ order_status_set = set(order_status)
 #count of unique words in order_status list
 count = [(word,order_status.count(word)) for word in order_status_set]
 print(count)
+
+#create a dictionary from customers data?
+*******************************************
+
+customers_raw_data = """customer_id,customer_fname,customer_lname,address,city,state,pincode
+11599,Sandeep,Nookala,6303 heather Plaza,Brownsville,TX,78521
+356,David,Rodr,7605 Tawny horse Falls,chicago,IL,60625
+11599,Satish,Nookala,4674 pakala Road,Narsampet,TG,506132"""
+
+#method1:
+customers_header = customers_raw_data.split("\n")[0].split(',')
+customers_data = customers_raw_data.split("\n")[1:]
+
+customers_dic = {}
+for i in customers_data:
+    customers_dic[i.split(',')[0]] = tuple(i.split(',')[1:])
+print(customers_dic)
+
+#method2:
+customers_com= {i.split(',')[0] :tuple(i.split(',')[1:]) for i in customers_data}
+print(customers_com)
+
+print(customers_header)
+
+
+#create nested dictionary from given dictionary? print pincode of customer any customer?
+*****************************************************************************************
+
+customers_header = ['customer_id', 'customer_fname', 'customer_lname', 'address', 'city', 'state', 'pincode']
+customers_data = {'11599': ('Satish', 'Nookala', '4674 pakala Road', 'Narsampet', 'TG', '506132'), '356': ('David', 'Rodr', '7605 Tawny horse Falls', 'chicago', 'IL', '60625')}
+
+final_customer ={}
+
+for key,value in customers_data.items():
+  final_customer[key] = {customers_header[1]:value[0],
+                     customers_header[2]:value[1],
+                     customers_header[3]:value[2],
+                     customers_header[4]:value[3],
+                     customers_header[5]:value[4],
+                     customers_header[6]:value[5]}
+print(final_customer)
+print(final_customer.get("11599").get("pincode"))
+
+
+
+

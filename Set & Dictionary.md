@@ -1,4 +1,4 @@
-*****************************************************************************
+
 #Sets: {}
 ******
 1.set is unordered collection
@@ -7,176 +7,145 @@
 
 
 #creation of set:
-****************
-s = set()                    #this only on function to create empty set
 
+s = set()                         #this only on function to create empty set
 print(s)
+print(type(s))                    #prints datatype
+
+#create set from tuple:
+
+order = ("closed",1,2.5,(1,2,3),"closed",1,2.5,(1,2,3))
+order_set = set(order)
+print(order_set)
 
 
-t = (1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5)
+#set with even numbers in range 10:
 
-s1 = set(t)                  #set from tuple 
-
-print(s1)
-
-
-#Print set and its type:
-************************
-order = {"closed",1,2.5,(1,2,3),"closed",1,2.5,(1,2,3)}
-print(order)
-print(type(order))
+even_set = set(i for i in range(10) if i % 2 == 0)
+print(even_set)
 
 
-# different functions add,copy,update:
-**************************************
+#functions:
+***********
+#add,copy,update:
+*****************
 
-s = {10, 20, 40, 60, 80, 100}
+order_set = {'closed', 2.5, (1, 2, 3), 1}
 
-s.add(1000)                       # add 1000 to set
-
-print(s)
-
-
-s1 = s.copy()                     # copy set elements to another set
-
-print(s1)
-
-
-s.update(range(5))                # adds multiple elements at a time
-
-print(s)
+order_set.add(100)                        #add 100 to set
+print(order_set)
+sales_set = order_set.copy()              #copy set elements to another set
+print(sales_set)
+order_set.update(range(5))                #adds multiple elements at a time
+print(order_set)
 
 
-#different functions pop,remove,discard,clear:
-**********************************************
+#pop,remove,discard,clear:
+**************************
+
+order_set = {'closed', 2.5, (1, 2, 3), 1}
+
+order_set.pop()                           #removes random element
+print(order_set)
+
+order_set.remove('closed')                #removes particular element from set
+print(order_set)
+
+order_set.discard(2)                      #removes particular element from set same like remove ,if element not exists we won't get error
+print(order_set)
+
+order_set.clear()                         #removes all element from set
+print(order_set)
 
 
-s = {0, 1, 2, 3, 4, 10, 80, 20, 100, 40, 1000, 60}
-
-s.pop()             #removes random element
-
-s.remove(1000)      #removes particular element from set
-
-s.discard(2000)     #removes particular element from set same like remove ,if element not exists we won't get error
-
-s.clear()           #removes all element from set
-
-print(s)
-
-
+#operators:
+***********
 #membership operators:
 **********************
+order_set = {'closed', 2.5, (1, 2, 3), 1}
 
-s = {0, 1, 2, 3, 4, 10, 80, 20, 100, 40, 1000, 60}
-
-print( 50 in s)
-print(50 not in s)
-
+print(2.5 in order_set)
+print(10 not in order_set)
 
 
-#math operations :union,intersection,difference,symmetric difference:
-********************************************************************
+#math operations:
+*****************
+order_set = set( i for i in range(10))
+even_set = set(i for i in range(5) if i%2 == 0)
+odd_set = set(i for i in range(5) if i%2 !=0)
 
-s = set( i for i in range (10))
-s1 = set( i for i in range(10) if i%2 == 0)
-s2 = set( i for i in range(10) if i%2 != 0)
+print(even_set)
+print(odd_set)
 
+#union
+set_union = even_set.union(odd_set)
+print(set_union)
 
-s3 = s.union()
-print(s3)
-
-
-s4 = s.intersection(s1)
-print(s4)
-
-s5 = s.difference(s1)
-print(s5)
-
-s6 = s.symmetric_difference(s1)
-print(s6)
+#intersection
+set_intersect = order_set.intersection(set_union)
+print(set_intersect)
 
 
-#write a program to print common elements in two lists using sets?
+s1 = {1,2,3,4,5}
+s2 = {2,3,4,5,6}
+
+#difference
+set_diff = s1.difference(s2)                # removes only matching elements from s2
+
+print(set_diff)
+
+#symetric difference
+set_sym_diff = s1.symmetric_difference(s2)  # removes common elements from two python sets
+print(set_sym_diff)
+
+
+#1.write a program to print common elements in two lists using sets & their count?
 
 l1 = [40,50,60,80,100]
 l2 = [50,100,150,200]
 
-l1_set = set(l1)
-l2_set = set(l2)
+comm_list = set(l1) & set(l2)
 
-l3 = l1_set & l2_set
-
-print('common elements',l3,'count',len(l3))
+print(comm_list,len(comm_list))
 
 
-
-#print set with even numbers in range n:
-***************************************
-
-n = int(input('Enter any number:'))
-
-s = set(i for i in range(n) if i %2 == 0)
-
-print(s)
-
-
-#write a program to remove common elements from two python sets?
-
-
-#symetric difference
-
-s1 = {1,2,3,4,5}
-s2 = {2,3,4,5,6}
-
-s3 = s1.symmetric_difference(s2)
-
-print(s3)
-
-#print vowels present in given word using set:
-**********************************************
-
-word = ' sandeep is big data engineer'
-w = set(word)
-
-vowels = 'aeiouAEIOU'
-v = set(vowels)
-
-s = w.intersection(v)
-print(w)
-print(v)
-print(s)
-
-
-#get unique elements from list:
+#2.get unique elements from list:
 ********************************
 
 dup_list = [1,2,3,4,5,5,4,3,2,1]
-unique_list = list(set(dup_list))
-print(unique_list)
+
+print(list(set(dup_list)))
 
 
-#Find invalid order status:
+#3.print vowels present in given word using set:
+**********************************************
+
+word = ' sandeep is big data engineer'
+
+vowels = 'aeiouAEIOU'
+
+word_set = set(word)
+print(word_set)
+vowels_set = set(vowels)
+print(vowels_set)
+
+word_vowels = set(word) & set(vowels)
+print(word_vowels)
+
+#or
+
+word_vowels2 = word_set.intersection(vowels_set)
+print(word_vowels2)
+
+
+#4.Find invalid order status:
 ***************************
 
 order_status = {"COMPLETE","PENDING","CLOSED","PROCESSING","CANCELED","PAYMENT_REVIEW","PENDING_PAYMENT","ON_HOLD","SUSPENDED"}
 valid_order_status = {"COMPLETE","PENDING","CLOSED","PROCESSING","CANCELED","PAYMENT_REVIEW","PENDING_PAYMENT"}
+
 invalid_order_status = order_status - valid_order_status
 print(invalid_order_status)
-
-
-
-
-#19. write a program to remove common elements from two python sets?
-
-
-#symetric difference
-
-s1 = {1,2,3,4,5}
-s2 = {2,3,4,5,6}
-
-s3 = s1.symmetric_difference(s2)
-
-print(s3)
 
 
 
@@ -192,191 +161,146 @@ print(s3)
 
 #creation of dic:
 *****************
+#empty dictionary:
+emp_dict = {}                         
+print(emp_dict)
+print(type(emp_dict))
 
-d = {}                                                      #empty dictionary
+#empty dictionary using dict keyword:
+new_dic = dict()                      
+print(new_dic)
+print(type(new_dic))
 
-print(d,type(d))
+#dictionary with key and value pairs:
 
-d1 = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}         # key and value pairs
+vehicle_dic = {"car":"4","bike":"2","bus":"8","truck":"10"}
+print(vehicle_dic)
+print(type(vehicle_dic))
 
-print(d1,type(d1))
+#functions:
+***********
+#keys(): 
 
+print(vehicle_dic.keys())                          #prints only keys #immutable
 
-#Print Dictionary:
-******************
-word = {"car":"4 wheels","bike":"2 wheels",6:"bus",(1,2,3):"three",}
+#values(): 
+print(vehicle_dic.values())                        #prints only values #mutable
 
-print(word)
+#items(): 
+print(vehicle_dic.items())                         #prints keys and values in tuple pairs
 
+#print keys values:
 
-#Print any value of key:
-***********************
-print(word["car"])
-print(word[6])
+print('bus wheels are:',vehicle_dic['bus'])        #gives value for associated key
+print('car wheels are:',vehicle_dic['car'])
 
+#get():
+print(vehicle_dic.get('train'))                   #gives none if keys doesnot exist we use get function to aviod errors
+print(vehicle_dic['train'])                       #gives errors
 
-#Print value of key without error message if not exit:
-******************************************************
-print(word.get((1,2,3))) 
-print(word.get(4))   #to aviod error will you get function
+#length
+print('length of dicionary is:',len(vehicle_dic))
+
+#copy
+transport_dic = vehicle_dic.copy()                 #copy Dictionary elements to another Dictionary
+print(transport_dic)
+
+#clear
+transport_dic.clear()
+print(vehicle_dic)
+
+#delete:
+********
+print(vehicle_dic)
+del vehicle_dic['bus']                     #remove particular key values
+print(vehicle_dic)
+
+#pop():
+print(vehicle_dic.pop('car'))               #remove particular key 
+
+#popitem():
+print(vehicle_dic.popitem())                #removes last iteam 
+
+#update():
+x = {'auto':'3'}
+vehicle_dic.update(x)                        #add/merge two dicionaries
+print(vehicle_dic)
 
 
 #reassign value in Dictionary (dic Mutability):
 ***********************************************
-word = {"car":"4 wheels","bike":"2 wheels"}
-word["bus"] = "6 wheels"
-word["car"] = "passenger car"
-print(word)
+vehicle_dic = {"car":"4","bike":"2","bus":"8","truck":"10"}
+
+vehicle_dic['bus'] = 10
+vehicle_dic['car'] = 5
+print(vehicle_dic)
 
 
 #convert list of tuples into Dictionary:
-****************************************
-orders_list = [(101,10000),(102,20000),(103,15000)]
 
-orders_dic = dict(orders_list)
-print(orders_dic)
-print(orders_dic[102])
+orders = [(101,10000),(102,20000),(103,15000)]
 
-
-#prints only Dictionary keys:
-*****************************
-order_keys = orders_dic.keys()
-print(order_keys)
-
-
-#prints only Dictionary values:
-*******************************
-order_values = orders_dic.values()
-print(order_values)
-
-
-#prints only Dictionary items:
-******************************
-order_item = orders_dic.items()
-print(order_item)
+orders_list = dict(orders)
+print(orders_list)
+print(orders_list[102])
 
 
 #convert dictionary into list:
 ******************************
 order_dic = {101: 10000, 102: 20000, 103: 15000}
-order_list = list(order_dic.items())
-print(order_list)
 
-
-#find length of dict:
-*********************
-print(len(order_dic))
-
-
-#clear dictionary:
-******************
-order_dic.clear()
-print(order_dic)
+print(list(order_dic.items()))
 
 
 #Covert Dictionary into string:
 *******************************
-works with only strings
+join works with only strings
 
-d = {'4':'sandeep','3':'satish','1':'krishna','2':'padma'}
-seperator ='_'
+name_dic= {'4':'sandeep','3':'satish','1':'krishna','2':'padma'}
 
-b = seperator.join(d)
-c = seperator.join(d.values())
-print(b)
-print(c)
+name_string = ' '.join(name_dic.keys())             #convert keys into string 
+print(name_dic)
+print(name_string)
 
-
-#access elements in dic:
-************************
-
-d1 = {4:'sandeep',3:'satish',1:'krishna',2:'padma',5:'sandeep',6:'satish'}
-
-print(d1.items())           #prints keys and vales
-print(d1.keys())            #prints only keys
-print(d1.values())          #prints only values
-print(d1[3])                #gives value for associated key
+name_string = ' '.join(name_dic.values())           #convert values into string 
+print(name_dic)
+print(name_string)
 
 
-#functions delete,clear:
-************************
+#write a program to convert two lists in dictonary?
 
-d = {4:'sandeep',3:'satish',1:'krishna',2:'padma',5:'sandeep',6:'satish'}
+l1 = [1,2,3,4,5,6,7]
+l2 = ['one','two','three','four','five','six','seven']
 
-del d[6]          #remove particular element
-
-print(d)
-
-d.clear()         #removes all elements
-
-print(d)
-
-
-#functions len,get,pop,popitem,copy,update:
-*******************************************
-
-d = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}
-x ={5:'sweety',6:'notty'}
-
-
-print('length of dic',len(d))
-print('get 2(key) value is:',d[2])
-
-d.pop(2)                 #remove particular key
-print(d)
-
-
-d.popitem()              #removes key-value pair
-print(d)
+list_dic = dict(zip(l1,l2))
+print(list_dic)
 
 
 
-d.update(x)              #adds new key value pairs from another dic
-print(d)
-
-d1 = d.copy()            #copy dic elements to another dic
-print(d1)
-
-
-#15. write a program to convert two lists in dictonary?
-
-def list_dict():
-    l1 = [1,2,3,4,5,6,7]
-    l2 = ['one','two','three','four','five','six','seven']
-    d = dict(zip(l1,l2))
-    print(d)
-
-list_dict()
-
-
-
-#16. write a program to convert dictonary in to tuple pair?
-
-def dict_tup():
-
-    for i in x.items():
-        print(i)
-
+#write a program to convert dictonary in to tuple pair?
 
 x = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven'}
+print(tuple(x.items()))
 
-dict_tup()
+#or
+
+tuple_pairs = tuple(i for i in x.items())
+print(tuple_pairs)
 
 
 
-#20. write a program to remove duplicates in python dictionary?
+#write a program to remove duplicates in python dictionary?
 
-dict1 = {
+veh_dict = {
     'car':["Ford","Toyota","Ford","Toyota"],
     'brand':["Must","Ranz","Must","Ranz"]
 }
 
-dict2 = {}
+veh_uniq = {}
 
-for key,value in dict1.items():
-    dict2[key] = set(value)
-
-print(dict2)
+for key,value in veh_dict.items():
+    veh_uniq[key] = set(value)
+print(veh_uniq)
 
 
 
@@ -385,63 +309,14 @@ print(dict2)
 *******************************
 
 d = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}
-x ={5:'sweety',6:'notty'}
+x ={5:'shrey',6:'avey'}
 
 d.update(x)
-
 print(d)
 
+#or
 
-d1 = {4:'sandeep',3:'satish',1:'krishna',2:'padma'}
-d2 ={5:'sweety',6:'notty'}
-
-d3 = {**d1,**d2}
-
-print (d3)
-
-
-#create a dictionary from customers data?
-*******************************************
-
-customers_raw_data = """customer_id,customer_fname,customer_lname,address,city,state,pincode
-11599,Sandeep,Nookala,6303 heather Plaza,Brownsville,TX,78521
-356,David,Rodr,7605 Tawny horse Falls,chicago,IL,60625
-11599,Satish,Nookala,4674 pakala Road,Narsampet,TG,506132"""
-
-#method1:
-customers_header = customers_raw_data.split("\n")[0].split(',')
-customers_data = customers_raw_data.split("\n")[1:]
-
-customers_dic = {}
-for i in customers_data:
-    customers_dic[i.split(',')[0]] = tuple(i.split(',')[1:])
-print(customers_dic)
-
-#method2:
-customers_com= {i.split(',')[0] :tuple(i.split(',')[1:]) for i in customers_data}
-print(customers_com)
-
-print(customers_header)
-
-
-#create nested dictionary from given dictionary? print pincode of customer any customer?
-*****************************************************************************************
-
-customers_header = ['customer_id', 'customer_fname', 'customer_lname', 'address', 'city', 'state', 'pincode']
-customers_data = {'11599': ('Satish', 'Nookala', '4674 pakala Road', 'Narsampet', 'TG', '506132'), '356': ('David', 'Rodr', '7605 Tawny horse Falls', 'chicago', 'IL', '60625')}
-
-final_customer ={}
-
-for key,value in customers_data.items():
-  final_customer[key] = {customers_header[1]:value[0],
-                     customers_header[2]:value[1],
-                     customers_header[3]:value[2],
-                     customers_header[4]:value[3],
-                     customers_header[5]:value[4],
-                     customers_header[6]:value[5]}
-print(final_customer)
-print(final_customer.get("11599").get("pincode"))
-
-
+y = {**d,**x}
+print(y)
 
 
